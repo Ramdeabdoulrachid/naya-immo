@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --naya-bg: #F7F8F5;
+  --naya-surface: #FFFFFF;
+  --naya-surface-alt: #EDF1EB;
+  --naya-text: #18231F;
+  --naya-muted: #6D7871;
+  --naya-primary: #214C3B;
+  --naya-primary-hover: #193B2E;
+  --naya-secondary: #577D64;
+  --naya-sand: #D9BD91;
+  --naya-sand-light: #F3EAD8;
+  --naya-border: #E4E9E3;
+}
+
+@theme inline {
+  --color-naya-bg: var(--naya-bg);
+  --color-naya-surface: var(--naya-surface);
+  --color-naya-surface-alt: var(--naya-surface-alt);
+  --color-naya-text: var(--naya-text);
+  --color-naya-muted: var(--naya-muted);
+  --color-naya-primary: var(--naya-primary);
+  --color-naya-primary-hover: var(--naya-primary-hover);
+  --color-naya-secondary: var(--naya-secondary);
+  --color-naya-sand: var(--naya-sand);
+  --color-naya-sand-light: var(--naya-sand-light);
+  --color-naya-border: var(--naya-border);
+
+  --font-heading: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+}
+
+html {
+  background-color: var(--naya-bg);
+  color: var(--naya-text);
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--naya-bg);
+  color: var(--naya-text);
+  font-family: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: clip;
+  min-height: 100dvh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Focus visible accessible au clavier */
+:focus-visible {
+  outline: 2px solid var(--naya-primary);
+  outline-offset: 2px;
+}
+
+/* Respect strict de prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utilitaires de safe-area mobile */
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
