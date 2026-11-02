@@ -1,23 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { MobileBottomNav } from "@/components/layout/mobile-bottom-nav";
 import { AGENCY_CONFIG } from "@/config/agency";
 
-const manrope = Manrope({
-  subsets: ["latin"],
+const manrope = localFont({
+  src: "./fonts/manrope-latin.woff2",
   variable: "--font-manrope",
   display: "swap",
-  weight: ["500", "600", "700", "800"],
+  weight: "200 800",
 });
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
+const dmSans = localFont({
+  src: "./fonts/dm-sans-latin.woff2",
   variable: "--font-dm-sans",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: "100 900",
 });
 
 export const viewport: Viewport = {
